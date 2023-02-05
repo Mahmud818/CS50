@@ -1,0 +1,4 @@
+1. Prompt user for height of pyramid
+2. If height is less than 1 or greater than 8 (or not an integer at all), repeat step 1
+3. Run loop for height of pyramid :
+    1. On each iteration of loop print corresponding number of hashes then newline

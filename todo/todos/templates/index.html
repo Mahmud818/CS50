@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Tasks
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <tr>
+            <th colspan="3"><h3>TASKS TODO</h3></th>
+        </tr>
+        {%if (rows|length == 0)%}
+            <tr><td>No pending task</td><tr>
+        {%else%}
+            <tr colspan="3">
+                <th>Tasks</th>
+                <th>Date to be Completed</th>
+                <th>Time to be Completed</th>
+            </tr>
+            {%for row in rows%}
+                <tr>
+                    <td>{{row['task']}}</td>
+                    <td>{{row['date']}}</td>
+                    <td>{{row['time']}}</td>
+                </tr>
+            {%endfor%}
+        {%endif%}
+    </table>
+    <table class="table table-striped">
+        <tr>
+            <th colspan="3"><h3>COMPLETED TASKS</h3></th>
+        </tr>
+        {%if (rowss|length == 0)%}
+            <tr><td>No completed task</td><tr>
+        {%else%}
+            <tr colspan="3">
+                <th>Tasks</th>
+                <th>Time Completed</th>
+            </tr>
+            {%for row in rowss%}
+                <tr>
+                    <td>{{row['task']}}</td>
+                    <td>{{row['time_comp']}}</td>
+                </tr>
+            {%endfor%}
+        {%endif%}
+    </table>
+{% endblock %}

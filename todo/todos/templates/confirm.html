@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Confirm Task
+{% endblock %}
+
+{% block main %}
+    {%if rows|length > 0%}
+        <form action="/confirm" method="post">
+            <div class="form-group">
+                <select class="form-control" name="task" title="select task to confirm">
+                    <option disabled selected value="">Task</option>
+                    {% for row in rows %}
+                        <option value="{{row['task']}}">{{row['task']}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+            <button class="btn btn-primary" type="submit">Confirm</button>
+        </form>
+    {%else%}
+        <p>No task to confirm!!!</p>
+    {%endif%}
+{% endblock %}

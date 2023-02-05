@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>{{g}}</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            {%for d in range(c | length)%}
+                {% if b[d] > 0 %}
+                <tr>
+                    <td>{{c[d]['symbol']}}</td>
+                    <td>{{c[d]['name']}}</td>
+                    <td>{{b[d]}}</td>
+                    <td>{{w[d]}}</td>
+                    <td>{{m[d]}}</td>
+                </tr>
+                {%endif%}
+            {% endfor %}
+            <tr>
+                <td colspan="4">CASH</td>
+                <td>{{s}}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

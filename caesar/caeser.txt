@@ -1,0 +1,5 @@
+Check if command-line argument was single and a positive integer
+convert command-line argument from string to int
+Prompt for plane text
+convert from plane text to cipher text by iterarting over each character of string and rotating them in thier corresponding cases
+Print a new line
